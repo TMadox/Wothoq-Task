@@ -1,3 +1,4 @@
+import 'package:cached_network_image/cached_network_image.dart';
 import 'package:fancy_shimmer_image/fancy_shimmer_image.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_image_slideshow/flutter_image_slideshow.dart';
@@ -134,8 +135,10 @@ class SliverPhotoSlider extends HookConsumerWidget {
                   .map(
                     (image) => FancyShimmerImage(
                       imageUrl: image.img,
-                      errorWidget: Image.network(
-                        "https://picsum.photos/${screenWidth(context).toInt()}/300",
+                      boxFit: BoxFit.cover,
+                      errorWidget: CachedNetworkImage(
+                        imageUrl:
+                            "https://picsum.photos/${screenWidth(context).toInt()}/300",
                         fit: BoxFit.cover,
                       ),
                     ),
