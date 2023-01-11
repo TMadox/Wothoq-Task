@@ -51,7 +51,7 @@ class SliverPhotoSlider extends HookConsumerWidget {
             ),
           ),
           Padding(
-            padding: const EdgeInsets.only(right: 20),
+            padding: const EdgeInsets.symmetric(horizontal: 20),
             child: Row(
               children: [
                 CircleAvatar(
